@@ -20,7 +20,9 @@ public class Citizen : MonoBehaviour
     }
 
     private void Update(){
-        if(Vector3.Distance(transform.position,destination) <= 5){
+        if(StagePresenter.Instance.Phase != StagePhase.PLAY) return;
+
+        if(Vector3.Distance(transform.position,destination) <= 3){
             destination = StagePresenter.Instance.GetSuitablePositon();
         }
         else agent.SetDestination(destination);
