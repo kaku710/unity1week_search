@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class StagePresenter : MonoBehaviour {
+public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
     private Citizen criminal; //犯人を格納
 
     private void Start () {
