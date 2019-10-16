@@ -4419,8 +4419,9 @@ GameObject:
   m_Component:
   - component: {fileID: 419994}
   - component: {fileID: 9562684}
+  - component: {fileID: 8900940297199944971}
   m_Layer: 0
-  m_Name: M_farmer_03
+  m_Name: Citizen18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4509,6 +4510,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8900940297199944971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183b2bf26da9f42338f18f7e5918a50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &138660
 GameObject:
   m_ObjectHideFlags: 0

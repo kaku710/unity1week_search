@@ -1499,8 +1499,9 @@ GameObject:
   m_Component:
   - component: {fileID: 493918}
   - component: {fileID: 9572174}
+  - component: {fileID: -5230525178917231507}
   m_Layer: 0
-  m_Name: M_doctor
+  m_Name: Citizen15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1589,6 +1590,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5230525178917231507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183b2bf26da9f42338f18f7e5918a50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &114028
 GameObject:
   m_ObjectHideFlags: 0
