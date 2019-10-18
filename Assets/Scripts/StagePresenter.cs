@@ -40,6 +40,10 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
             case StagePhase.SHOT:
                 view.inGamePanel.gameObject.SetActive(false);
                 rifle.SetActive(false);
+                var citizens = GameObject.FindGameObjectsWithTag("Citizen");
+                foreach(var c in citizens){
+                    c.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0;
+                }
                 break;
             case StagePhase.CLEAR:
                 break;

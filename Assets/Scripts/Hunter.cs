@@ -22,8 +22,8 @@ public class Hunter : MonoBehaviour {
     }
 
     private void Shot () {
+        StagePresenter.Instance.SetPhase(StagePhase.SHOT);
         var shell = (GameObject) Resources.Load ("Shell");
         var obj = Instantiate (shell, shellTransform.position, shellTransform.rotation);
-        StagePresenter.Instance.SetPhase(StagePhase.SHOT);
     }
 }

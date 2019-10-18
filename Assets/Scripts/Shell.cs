@@ -15,8 +15,8 @@ public class Shell : MonoBehaviour
         shotDirection = hunter.forward;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        rb.AddForce(shotDirection * 5f,ForceMode.Acceleration);
+        rb.AddForce(shotDirection * 3f,ForceMode.Acceleration);
     }
 }

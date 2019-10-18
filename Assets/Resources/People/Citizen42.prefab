@@ -5327,7 +5327,7 @@ GameObject:
   - component: {fileID: -4146940124705300680}
   m_Layer: 0
   m_Name: Citizen42
-  m_TagString: Untagged
+  m_TagString: Citizen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
