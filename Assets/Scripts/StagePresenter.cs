@@ -1,6 +1,7 @@
 ﻿using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
@@ -46,8 +47,16 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
                 }
                 break;
             case StagePhase.CLEAR:
+                Debug.Log("CLEAR");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                view.clearPanel.gameObject.SetActive(true);
                 break;
             case StagePhase.GAMEOVER:
+                Debug.Log("GAMEOVER");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                view.gameOverPanel.gameObject.SetActive(true);
                 break;
         }
     }
@@ -66,6 +75,13 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
         view.startButton.onClick.AddListener (() => {
             SetPhase(StagePhase.COUNTDOWN);
             Destroy(sampleCriminal);
+        });
+        view.nextStageButton.onClick.AddListener(() => {
+            GameManager.Instance.AddLevel();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        });
+        view.titleButton.onClick.AddListener(() => {
+            SceneManager.LoadScene("Title");
         });
     }
 

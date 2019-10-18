@@ -5,10 +5,14 @@ using System.Collections;
 public class StageView : MonoBehaviour
 {
     public Button startButton;
+    public Button nextStageButton;
+    public Button titleButton;
     public Image startPanel;
     public Image inGamePanel;
+    public Image clearPanel;
+    public Image gameOverPanel;
     [SerializeField] private Text countDownLabel;
-    
+
     public IEnumerator CountDown(){
         countDownLabel.gameObject.SetActive(true);
         int second = 3;
