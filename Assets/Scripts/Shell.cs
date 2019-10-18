@@ -19,4 +19,10 @@ public class Shell : MonoBehaviour
     {
         rb.AddForce(shotDirection * 3f,ForceMode.Acceleration);
     }
+
+    private void OnTriggerEnter(Collider col){
+        if(col.gameObject.CompareTag("Citizen")){
+            var isCriminal = col.GetComponent<Citizen>().isCriminal;
+        }
+    }
 }

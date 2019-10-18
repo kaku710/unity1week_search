@@ -4428,6 +4428,7 @@ GameObject:
   - component: {fileID: 9535362}
   - component: {fileID: 9058726273686364167}
   - component: {fileID: 4655887302288534029}
+  - component: {fileID: -8034158548194363130}
   m_Layer: 0
   m_Name: Citizen19
   m_TagString: Citizen
@@ -4553,6 +4554,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &-8034158548194363130
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.78553045, y: 1.6592267, z: 0.62781423}
+  m_Center: {x: -0.000000014901161, y: 0.827397, z: 0.01925096}
 --- !u!1 &134902
 GameObject:
   m_ObjectHideFlags: 0
