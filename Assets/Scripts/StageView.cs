@@ -6,7 +6,9 @@ public class StageView : MonoBehaviour
 {
     public Button startButton;
     public Image startPanel;
+    public Image inGamePanel;
     [SerializeField] private Text countDownLabel;
+    
     public IEnumerator CountDown(){
         countDownLabel.gameObject.SetActive(true);
         int second = 3;

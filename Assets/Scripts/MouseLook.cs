@@ -14,6 +14,7 @@ public class MouseLook : MonoBehaviour {
     }
 
     private void Update () {
+        if(StagePresenter.Instance.Phase != StagePhase.PLAY) return;
         float X_Rotation = Input.GetAxis ("Mouse X");
         float Y_Rotation = Input.GetAxis ("Mouse Y");
         verRot.transform.Rotate (0, X_Rotation * verticalSpeed * Time.deltaTime, 0);

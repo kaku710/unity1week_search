@@ -10,12 +10,14 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
     private GameObject sampleCriminal;
     private Citizen criminal; //犯人を格納
     [SerializeField] private Camera mainCam;
+    [SerializeField] private GameObject rifle;
 
     private void Start () {
         SetPhase(StagePhase.MEMORY);
         criminalNumber = Random.Range (0, Constant.CITIZEN_COUNT);
         var sample = (GameObject) Resources.Load ("People/Citizen" + criminalNumber);
         sampleCriminal = Instantiate (sample, Constant.CRIMINAL_POS, Quaternion.Euler (0, 180, 0));
+        rifle.SetActive(false);
         SetEvents();
     }
 
@@ -30,8 +32,14 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
                 StartCoroutine(view.CountDown());
                 break;
             case StagePhase.PLAY:
+                view.inGamePanel.gameObject.SetActive(true);
                 mainCam.gameObject.GetComponent<MouseLook>().enabled = true;
+                rifle.SetActive(true);
                 CreateCharacter();
+                break;
+            case StagePhase.SHOT:
+                view.inGamePanel.gameObject.SetActive(false);
+                rifle.SetActive(false);
                 break;
             case StagePhase.CLEAR:
                 break;
@@ -105,6 +113,7 @@ public enum StagePhase {
     MEMORY,
     COUNTDOWN,
     PLAY,
+    SHOT,
     CLEAR,
     GAMEOVER
 }
