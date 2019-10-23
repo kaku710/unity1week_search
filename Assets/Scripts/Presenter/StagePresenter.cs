@@ -48,6 +48,7 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
                 break;
             case StagePhase.CLEAR:
                 Debug.Log ("CLEAR");
+                AudioManager.Instance.PlaySE("gameclear");
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 if (GameManager.Instance.CurrentLevel <= 2) {
@@ -61,6 +62,7 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
                 }
                 break;
             case StagePhase.GAMEOVER:
+                AudioManager.Instance.PlaySEWithVolume("gameover",0.5f);
                 Debug.Log ("GAMEOVER");
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -104,17 +106,21 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
         }).AddTo (this.gameObject);
 
         view.startButton.onClick.AddListener (() => {
+            AudioManager.Instance.PlaySE("button");
             SetPhase (StagePhase.COUNTDOWN);
             Destroy (sampleCriminal);
         });
         view.nextStageButton.onClick.AddListener (() => {
+            AudioManager.Instance.PlaySE("button");
             GameManager.Instance.AddLevel ();
             SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
         });
         view.titleButton.onClick.AddListener (() => {
+            AudioManager.Instance.PlaySE("button");
             SceneManager.LoadScene ("Title");
         });
         view.gameClearTitleButton.onClick.AddListener (() => {
+            AudioManager.Instance.PlaySE("button");
             SceneManager.LoadScene ("Title");
         });
     }
