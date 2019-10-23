@@ -12,6 +12,10 @@ public class StageView : MonoBehaviour
     public Image clearPanel;
     public Image gameOverPanel;
     [SerializeField] private Text countDownLabel;
+    [SerializeField] private Text timerLabel;
+    [SerializeField] private Image timeGage;
+    [SerializeField] private Text startLevelLabel;
+    [SerializeField] private Text startTimeLabel;
 
     public IEnumerator CountDown(){
         countDownLabel.gameObject.SetActive(true);
@@ -25,5 +29,15 @@ public class StageView : MonoBehaviour
         yield return new WaitForSeconds (1f);
         countDownLabel.gameObject.SetActive(false);
         StagePresenter.Instance.SetPhase(StagePhase.PLAY);
+    }
+
+    public void OnTimeChanged(int time){
+        timerLabel.text = time.ToString();
+        timeGage.fillAmount = (float)time / Constant.TIME_LIMIT_ARRAY[GameManager.Instance.CurrentLevel - 1];
+    }
+
+    public void SetStartLabel(){
+        startLevelLabel.text = "Level " + GameManager.Instance.CurrentLevel.ToString();
+        startTimeLabel.text = "制限時間 : " + Constant.TIME_LIMIT_ARRAY[GameManager.Instance.CurrentLevel - 1] + "s";
     }
 }

@@ -23,6 +23,10 @@ public class Hunter : MonoBehaviour {
 
     private void Shot () {
         StagePresenter.Instance.SetPhase(StagePhase.SHOT);
+        var citizens = GameObject.FindGameObjectsWithTag("Citizen");
+        foreach (var cit in citizens){
+            cit.GetComponent<Animator>().speed = 0;
+        }
         var shell = (GameObject) Resources.Load ("Shell");
         var obj = Instantiate (shell, shellTransform.position, shellTransform.rotation);
     }
