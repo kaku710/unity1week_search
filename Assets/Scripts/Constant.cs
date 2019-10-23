@@ -18,7 +18,7 @@ internal static class Constant {
     };
     public static readonly int[] MAKE_CITIZEN_COUNT = new int[3]{
         10,
-        20,
-        30
+        25,
+        40
     };
 }

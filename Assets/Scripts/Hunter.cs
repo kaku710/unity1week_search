@@ -18,7 +18,7 @@ public class Hunter : MonoBehaviour {
     private void Zoom () {
         if (Input.GetKey (KeyCode.W)) mainCam.fieldOfView -= 0.5f;
         if (Input.GetKey (KeyCode.S)) mainCam.fieldOfView += 0.5f;
-        mainCam.fieldOfView = Mathf.Clamp (mainCam.fieldOfView, 30, 60);
+        mainCam.fieldOfView = Mathf.Clamp (mainCam.fieldOfView, 25, 60);
     }
 
     private void Shot () {

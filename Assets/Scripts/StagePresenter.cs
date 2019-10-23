@@ -50,7 +50,11 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
                 Debug.Log ("CLEAR");
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                view.clearPanel.gameObject.SetActive (true);
+                if(GameManager.Instance.CurrentLevel <= 2) view.clearPanel.gameObject.SetActive (true);
+                else {
+                    GameManager.Instance.CalculateClearTime();
+                    view.gameClearPanel.gameObject.SetActive(true);
+                }
                 break;
             case StagePhase.GAMEOVER:
                 Debug.Log ("GAMEOVER");
@@ -104,6 +108,9 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
             SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
         });
         view.titleButton.onClick.AddListener (() => {
+            SceneManager.LoadScene ("Title");
+        });
+        view.gameClearTitleButton.onClick.AddListener (() => {
             SceneManager.LoadScene ("Title");
         });
     }

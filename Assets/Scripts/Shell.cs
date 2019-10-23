@@ -15,8 +15,8 @@ public class Shell : MonoBehaviour {
         shotDirection = hunter.forward;
     }
 
-    private void Update () {
-        rb.AddForce (shotDirection * 3f, ForceMode.Acceleration);
+    private void FixedUpdate () {
+        rb.AddForce (shotDirection * 4f, ForceMode.Acceleration);
     }
 
     private void OnTriggerEnter (Collider col) {
