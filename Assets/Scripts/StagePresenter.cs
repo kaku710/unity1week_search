@@ -12,6 +12,7 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
     private Citizen criminal; //犯人を格納
     [SerializeField] private Camera mainCam;
     [SerializeField] private GameObject rifle;
+    [SerializeField] private RuntimeAnimatorController citizenAnimator;
 
     private void Start () {
         SetPhase(StagePhase.MEMORY);
@@ -92,12 +93,14 @@ public class StagePresenter : SingletonMonoBehaviour<StagePresenter> {
         var crm = Instantiate (c, cpos, Quaternion.identity);
         criminal = crm.GetComponent<Citizen> ();
         criminal.isCriminal = true;
+        crm.GetComponent<Animator>().runtimeAnimatorController = citizenAnimator;
         //そのあとにモブを生成
         for (int i = 0; i < 9; i++) {
             var num = GetCharaNumber();
             var obj = (GameObject) Resources.Load ("People/Citizen" + num);
             var pos = GetSuitablePositon ();
             var citizen = Instantiate (obj, pos, Quaternion.identity);
+            citizen.GetComponent<Animator>().runtimeAnimatorController = citizenAnimator;
         }
     }
 

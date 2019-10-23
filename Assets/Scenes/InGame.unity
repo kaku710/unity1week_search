@@ -844,7 +844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &488995317
 Transform:
   m_ObjectHideFlags: 0
@@ -1546,7 +1546,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1e-45, y: 3.243117e+11, z: 1e-45, w: 2.06e-43}
+  m_BoundingSphereOverride: {x: 0, y: 1e-45, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3275,6 +3275,7 @@ MonoBehaviour:
   view: {fileID: 973537907}
   mainCam: {fileID: 963194227}
   rifle: {fileID: 488826325}
+  citizenAnimator: {fileID: 9100000, guid: b07e1a81d9b3143baa522cda5ab4336c, type: 2}
 --- !u!4 &1637727268
 Transform:
   m_ObjectHideFlags: 0
